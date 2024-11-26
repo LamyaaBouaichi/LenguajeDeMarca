@@ -4,6 +4,17 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+
+    background-image: url('img/Fondo.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+
+.text-center {
+    color: black;
 }
 
 .navbar {
@@ -13,6 +24,8 @@ body {
 .card {
     background-color: #333;
     color: white;
+    margin: 2%;
+    padding: 1%;
 }
 
 .card-img-overlay {
@@ -25,6 +38,6 @@ body {
     background-image: url('img/Fondo.jpg');
     background-size: cover; 
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
 }
-
