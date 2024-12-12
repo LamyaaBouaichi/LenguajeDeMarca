@@ -1,0 +1,7 @@
+<!ELEMENT tienda (producto+)>
+<!ELEMENT producto (nombre, precio, descripcion, stock, iva)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT stock (#PCDATA)>
+<!ELEMENT iva (#PCDATA)>

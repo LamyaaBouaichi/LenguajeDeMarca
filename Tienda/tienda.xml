@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tienda SYSTEM "file:/C:/Users/CampusFP/Documents/Lenguaje%20de%20marcas/Tienda/tienda.dtd">
+<?xml-stylesheet type="text/xsl" href="file:/C:/Users/CampusFP/Documents/Lenguaje%20de%20marcas/Tienda/tienda2.xsl"?>
+<tienda>
+  <producto>
+    <nombre>Barra de pan</nombre>  
+    <precio>0.75</precio>
+    <descripcion>Barra de pan común</descripcion>
+    <stock>20</stock>
+    <iva>10</iva>
+  </producto>
+  <producto>
+    <nombre>Barra de pan integral</nombre>  
+    <precio>0.85</precio>
+    <descripcion>Barra de pan integral</descripcion>
+    <stock>8</stock>
+    <iva>10</iva>
+  </producto>
+  <producto>
+    <nombre>Pan de molde</nombre>  
+    <precio>1.35</precio>
+    <descripcion>Pan de molde sin corteza</descripcion>
+    <stock>6</stock>
+    <iva>10</iva>
+  </producto>
+  <producto>
+    <nombre>Pechuga de pollo</nombre>  
+    <precio>8</precio>
+    <descripcion>Pechuga de pollo</descripcion>
+    <stock>13</stock>
+    <iva>10</iva>
+  </producto>
+  <producto>
+    <nombre>Queso</nombre>  
+    <precio>18</precio>
+    <descripcion>Queso de cabra</descripcion>
+    <stock>6</stock>
+    <iva>10</iva>
+  </producto>
+</tienda>
