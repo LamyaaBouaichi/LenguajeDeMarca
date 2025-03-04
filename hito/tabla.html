@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Hito 1 2º trimestre</title>
+</head>
+<body>
+    <div class="container" id="data-container">
+        <div class="row justify-content-center" id="fila">
+            <div class="table table-bordered">
+                <table class="table w-100">
+                    <h3>Cliente</h3>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Teléfono</th>
+                            <th>Dirección</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body-cliente">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" id="fila">
+            <div class="table table-bordered">
+                <table class="table w-100">
+                    <h3>Pedido</h3>
+                    <thead>
+                        <tr>
+                            <th>Detalle</th>
+                            <th>Nº pedido</th>
+                            <th>Fecha de compra</th>
+                            <th>Fecha entrega</th>
+                            <th>Total factura</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body-pedido">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" id="fila">
+            <div class="table table-bordered">
+                <table class="table w-100">
+                    <h3>Producto</h3>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Referencia</th>
+                            <th>Precio</th>
+                            <th>Unidades</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body-producto">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" id="fila">
+            <div class="table table-bordered">
+                <h3>Factura del cliente Nº5</h3>
+                <table class="table w-100">
+                    <thead>
+                        <tr>
+                            <th>Nombre del cliente</th>
+                            <th>Apellidos</th>
+                            <th>Producto</th>
+                            <th>Referencia</th>
+                            <th>Precio</th>
+                            <th>Unidades</th>
+                            <th>Total factura</th>
+                        </tr>
+                    </thead>
+                    <tbody id="factura-cliente">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" id="fila">
+            <div class="table table-bordered">
+                <h3>Productos vendidos 1ºtrim 2023 y 4ºtrim 2024</h3>    
+                <table class="table w-100">
+                    <thead>
+                        <tr>
+                            <th>Detalle</th>
+                            <th>Nº pedido</th>
+                            <th>Fecha de compra</th>
+                            <th>Fecha entrega</th>
+                            <th>Total factura</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productos-trimestre">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const jsonUrl = 'info.json';
+        let jsonData = [];
+
+        fetch(jsonUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al cargar el archivo JSON');
+                }
+                return response.json();
+            })
+            .then(data => {
+                jsonData = data;  
+                displayData(jsonData);
+                displayData2(jsonData);
+                displayData3(jsonData);
+                displayFactura(jsonData);
+                displayProdTrim(jsonData);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+
+        function displayData(data) {
+            const tableBody = document.getElementById('data-table-body-cliente');
+            tableBody.innerHTML = '';
+
+            data.ventas.clientes.forEach (item => {
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = item.nombre;
+                row.appendChild(nameCell);
+
+                const apellidosCell = document.createElement('td');
+                apellidosCell.textContent = item.apellidos;
+                row.appendChild(apellidosCell);
+
+                const telefonoCell = document.createElement('td');
+                telefonoCell.textContent = item.telefono;
+                row.appendChild(telefonoCell);
+
+                const direccionCell = document.createElement('td');
+                direccionCell.textContent = item.direccion.calle + " / " + item.direccion.ciudad + " / " + item.direccion.codigo_postal + " / " + item.direccion.provincia;
+                row.appendChild(direccionCell);
+
+                const emailCell = document.createElement('td');
+                emailCell.textContent = item.email;
+                row.appendChild(emailCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function displayData2(data) {
+            const tableBody = document.getElementById('data-table-body-pedido');
+            tableBody.innerHTML = '';
+
+            data.ventas.pedido.forEach (item => {
+                const row = document.createElement('tr');
+
+                const detalleCell = document.createElement('td');
+                detalleCell.textContent = item.detalle;
+                row.appendChild(detalleCell);
+
+                const num_pedidoCell = document.createElement('td');
+                num_pedidoCell.textContent = item.num_pedido;
+                row.appendChild(num_pedidoCell);
+
+                const fecha_compraCell = document.createElement('td');
+                fecha_compraCell.textContent = item.fecha_compra;
+                row.appendChild(fecha_compraCell);
+
+                const fecha_entregaCell = document.createElement('td');
+                fecha_entregaCell.textContent = item.fecha_entrega;
+                row.appendChild(fecha_entregaCell);
+
+                const total_facturaCell = document.createElement('td');
+                total_facturaCell.textContent = item.total_factura;
+                row.appendChild(total_facturaCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function displayData3(data) {
+            const tableBody = document.getElementById('data-table-body-producto');
+            tableBody.innerHTML = '';
+
+            data.ventas.producto.forEach (item => {
+                const row = document.createElement('tr');
+
+                const nombre_productoCell = document.createElement('td');
+                nombre_productoCell.textContent = item.nombre_producto;
+                row.appendChild(nombre_productoCell);
+
+                const referenciaCell = document.createElement('td');
+                referenciaCell.textContent = item.referencia;
+                row.appendChild(referenciaCell);
+
+                const precioCell = document.createElement('td');
+                precioCell.textContent = item.precio;
+                row.appendChild(precioCell);
+
+                const unidadesCell = document.createElement('td');
+                unidadesCell.textContent = item.unidades;
+                row.appendChild(unidadesCell);
+
+                tableBody.appendChild(row);
+
+            });
+        }
+
+        function displayFactura(data) {
+            const tableBody = document.getElementById('factura-cliente');
+            tableBody.innerHTML= '';
+
+            const cliente = data.ventas.clientes[1];
+            const producto = data.ventas.producto[1];
+
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = cliente.nombre;
+                row.appendChild(nameCell);
+
+                const apellidosCell = document.createElement('td');
+                apellidosCell.textContent = cliente.apellidos;
+                row.appendChild(apellidosCell);
+
+                const nombre_productoCell = document.createElement('td');
+                nombre_productoCell.textContent = producto.nombre_producto;                
+                row.appendChild(nombre_productoCell);
+
+                const referenciaCell = document.createElement('td');
+                referenciaCell.textContent = producto.referencia;
+                row.appendChild(referenciaCell);
+
+                const precioCell = document.createElement('td');
+                precioCell.textContent = producto.precio;
+                row.appendChild(precioCell);
+
+                const unidadesCell = document.createElement('td');
+                unidadesCell.textContent = producto.unidades;
+                row.appendChild(unidadesCell);
+
+                const totalCell = document.createElement('td');
+                totalCell.textContent = (producto.precio * producto.unidades).toFixed(2);
+                row.appendChild(totalCell);
+
+                tableBody.appendChild(row);
+    }
+
+    function displayProdTrim(data) {
+        const tableBody = document.getElementById('productos-trimestre');
+        tableBody.innerHTML= '';
+
+        const primTrim = data.ventas.pedido.filter(pedido => {
+            const fechaCompra = new Date(pedido.fecha_compra);
+            return fechaCompra.getFullYear() === 2023 && fechaCompra.getMonth() >= 0 && fechaCompra.getMonth() <= 2;
+        });
+
+        const lastTrim = data.ventas.pedido.filter(pedido => {
+            const fechaCompra = new Date(pedido.fecha_compra);
+            return fechaCompra.getFullYear() === 2024 && fechaCompra.getMonth() >= 9 && fechaCompra.getMonth() <= 11;
+        });
+
+        const productosTrim = [...primTrim, ...lastTrim];
+
+        productosTrim.forEach(pedido=> {
+
+            const row = document.createElement('tr');
+
+            const nombre_productoCell = document.createElement('td');
+            nombre_productoCell.textContent = pedido.detalle;  
+            row.appendChild(nombre_productoCell);
+
+            const num_pedidoCell = document.createElement('td');
+            num_pedidoCell.textContent = pedido.num_pedido;
+            row.appendChild(num_pedidoCell);
+
+            const fecha_compraCell = document.createElement('td');
+            fecha_compraCell.textContent = pedido.fecha_compra;
+            row.appendChild(fecha_compraCell);
+
+            const fecha_entregaCell = document.createElement('td');
+            fecha_entregaCell.textContent = pedido.fecha_entrega;
+            row.appendChild(fecha_entregaCell);
+
+            const total_facturaCell = document.createElement('td');
+            total_facturaCell.textContent = pedido.total_factura;
+            row.appendChild(total_facturaCell);
+
+            tableBody.appendChild(row);
+        });
+    }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

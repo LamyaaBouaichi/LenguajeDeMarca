@@ -1,0 +1,195 @@
+{
+    "ventas": {
+      "clientes": [
+        {
+          "nombre": "Juan",
+          "apellidos": "Pérez",
+          "telefono": 654132789,
+          "direccion": {
+            "calle": "Calle Falsa 123",
+            "ciudad": "Madrid",
+            "codigo_postal": 28010,
+            "provincia": "Madrid"
+          },
+          "email": "juan.perez@email.com"
+        },
+        {
+          "nombre": "Ana",
+          "apellidos": "González",
+          "telefono": 654987654,
+          "direccion": {
+            "calle": "Avenida Primavera 34",
+            "ciudad": "Madrid",
+            "codigo_postal": 28011,
+            "provincia": "Madrid"
+          },
+          "email": "ana.gonzalez@email.com"
+        },
+        {
+          "nombre": "Carlos",
+          "apellidos": "Martínez",
+          "telefono": 654321987,
+          "direccion": {
+            "calle": "Calle Luna 8",
+            "ciudad": "Madrid",
+            "codigo_postal": 28012,
+            "provincia": "Madrid"
+          },
+          "email": "carlos.martinez@email.com"
+        },
+        {
+          "nombre": "Beatriz",
+          "apellidos": "López",
+          "telefono": 655432678,
+          "direccion": {
+            "calle": "Calle Sol 56",
+            "ciudad": "Madrid",
+            "codigo_postal": 28013,
+            "provincia": "Madrid"
+          },
+          "email": "beatriz.lopez@email.com"
+        },
+        {
+          "nombre": "Pedro",
+          "apellidos": "Sánchez",
+          "telefono": 657654321,
+          "direccion": {
+            "calle": "Calle Olivo 45",
+            "ciudad": "Madrid",
+            "codigo_postal": 28014,
+            "provincia": "Madrid"
+          },
+          "email": "pedro.sanchez@email.com"
+        }
+      ],
+      "pedido": [
+        {
+          "detalle": "abc123",
+          "num_pedido": 1,
+          "fecha_compra": "01/01/2023",
+          "fecha_entrega": "03/01/2023",
+          "total_factura": 45.99
+        },
+        {
+          "detalle": "def456",
+          "num_pedido": 2,
+          "fecha_compra": "02/01/2023",
+          "fecha_entrega": "04/01/2023",
+          "total_factura": 19.49
+        },
+        {
+          "detalle": "ghi789",
+          "num_pedido": 3,
+          "fecha_compra": "15/01/2023",
+          "fecha_entrega": "17/01/2023",
+          "total_factura": 65.99
+        },
+        {
+          "detalle": "jkl101",
+          "num_pedido": 4,
+          "fecha_compra": "22/01/2023",
+          "fecha_entrega": "24/01/2023",
+          "total_factura": 29.99
+        },
+        {
+          "detalle": "mno234",
+          "num_pedido": 5,
+          "fecha_compra": "30/01/2023",
+          "fecha_entrega": "02/02/2023",
+          "total_factura": 12.99
+        },
+        {
+          "detalle": "pqr456",
+          "num_pedido": 6,
+          "fecha_compra": "10/04/2023",
+          "fecha_entrega": "12/04/2023",
+          "total_factura": 35.49
+        },
+        {
+          "detalle": "stu567",
+          "num_pedido": 7,
+          "fecha_compra": "15/04/2023",
+          "fecha_entrega": "17/04/2023",
+          "total_factura": 40.99
+        },
+        {
+          "detalle": "vwx678",
+          "num_pedido": 8,
+          "fecha_compra": "20/04/2023",
+          "fecha_entrega": "22/04/2023",
+          "total_factura": 23.99
+        },
+        {
+          "detalle": "yz1234",
+          "num_pedido": 9,
+          "fecha_compra": "25/04/2023",
+          "fecha_entrega": "27/04/2023",
+          "total_factura": 18.99
+        },
+        {
+          "detalle": "abc4321",
+          "num_pedido": 10,
+          "fecha_compra": "30/04/2023",
+          "fecha_entrega": "02/05/2023",
+          "total_factura": 50.49
+        }
+      ],
+      "producto": [
+        {
+          "nombre_producto": "Comida para Perro",
+          "referencia": 35590575,
+          "precio": 15.99,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Comida para Gato",
+          "referencia": 43278901,
+          "precio": 19.49,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Cama para Perro",
+          "referencia": 65813274,
+          "precio": 25.99,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Correa para Perro",
+          "referencia": 56723489,
+          "precio": 12.99,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Rascador para Gato",
+          "referencia": 35289456,
+          "precio": 22.49,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Juguete para Perro",
+          "referencia": 90573468,
+          "precio": 17.49,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Jaula para Hámster",
+          "referencia": 78123456,
+          "precio": 20.99,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Transportín para Perro",
+          "referencia": 13457890,
+          "precio": 24.99,
+          "unidades": 1
+        },
+        {
+          "nombre_producto": "Correa de Adiestramiento",
+          "referencia": 23874653,
+          "precio": 9.99,
+          "unidades": 1
+        }
+      ]
+    }
+  }
+  
